@@ -5,15 +5,16 @@
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
+        <h1>Quiz</h1>
     </head>
     <body>
         <div class="container">
-            <h1>Quiz</h1>
             <h2 class="question" id="q">Question</h2>
-            <button id= "A" onclick="checkAnswer('A')"></button>
-            <button id= "B" onclick="checkAnswer('B')"></button>
-            <button id= "C" onclick="checkAnswer('C')"></button>
-            <p id= "status-text">Text</p>
+            <button id= "A-btn" onclick="checkAnswer('A')"></button>
+            <button id= "B-btn" onclick="checkAnswer('B')"></button>
+            <button id= "C-btn" onclick="checkAnswer('C')"></button>
+            <!-- how do we add div per JS question? -->
+            <p id= "status-text"></p>
         </div>
         <script src="index.js"></script>
     </body>

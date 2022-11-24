@@ -1,19 +1,11 @@
 //let testQuestion = document.getElementById("test-question")
-
-// allQuestions = {
-//         'What is Canada\'s national animal?' : ['Beaver', 'Duck', 'Horse', 0],
-                
-//         'What is converted into alcohol during brewing?' : ['Grain', 'Sugar' , 'Water', 1],
-
-// }
-
 let questionEl = document.getElementById("q")
 // let allChoices = document.getElementById("choices")
 let textEl = document.getElementById("status-text")
 
-var A = document.getElementById("A")
-var B = document.getElementById("B")
-var C = document.getElementById("C")
+var A = document.getElementById("A-btn")
+var B = document.getElementById("B-btn")
+var C = document.getElementById("C-btn")
 
 let allQuestions = [
     {
@@ -36,9 +28,26 @@ let allQuestions = [
         correct : "C"
     }
 ];
-
+// all [0] need to be changed into currentQues
 let q = allQuestions[0].question
-let a = allQuestions[0].correct
+let ans = allQuestions[0].correct
+
+questionEl.innerHTML = allQuestions[0].question
+
+A.textContent = allQuestions[0].choiceA
+B.textContent = allQuestions[0].choiceB
+C.textContent = allQuestions[0].choiceC
+
+function checkAnswer(x){
+    if (x == ans) {
+        textEl.innerHTML = "Correct"
+    } else
+        textEl.innerHTML = "Incorrect"
+}
+
+// textEl.textContent = "HELLO"
+
+// console.log(B) = <button id="B" onclick="checkAnswer('B')">54</button>
 
 // let choices = allQuestions[0].[choiceA, choiceB, choiceC]
 
@@ -49,25 +58,6 @@ let a = allQuestions[0].correct
 //         console.log("Incorrect")
 //     }
 // }
-
-questionEl.innerHTML = allQuestions[0].question
-
-A.innerHTML = allQuestions[0].choiceA
-B.innerHTML = allQuestions[0].choiceB
-C.innerHTML = allQuestions[0].choiceC
-
-// textEl.textContent = "HELLO"
-
-console.log(B.textContent)
-
-
-function checkAnswer(x){
-    if (x == a) {
-        textEl.innerHTML = "Correct"
-    } else
-        textEl.innerHTML = "Incorrect"
-        console.log(x)
-}
 
 // let R = 22
 
