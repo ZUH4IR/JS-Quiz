@@ -9,7 +9,7 @@
 
 let questionEl = document.getElementById("q")
 // let allChoices = document.getElementById("choices")
-let textEl = documnet.getElementById("status-text")
+let textEl = document.getElementById("status-text")
 
 var A = document.getElementById("A")
 var B = document.getElementById("B")
@@ -56,10 +56,25 @@ A.innerHTML = allQuestions[0].choiceA
 B.innerHTML = allQuestions[0].choiceB
 C.innerHTML = allQuestions[0].choiceC
 
-textEl.textContent = "HELLO"
+// textEl.textContent = "HELLO"
 
-// function checkAnswer(A)
-//     if (A) = a {
-    //     textEl.innerHTML = "Correct"
-    // } else
-    //     textEl.innerHTML = "Incorrect"
+console.log(B.textContent)
+
+
+function checkAnswer(x){
+    if (x == a) {
+        textEl.innerHTML = "Correct"
+    } else
+        textEl.innerHTML = "Incorrect"
+        console.log(x)
+}
+
+// let R = 22
+
+// function printB(x){
+//     if ((x) = "22") {
+//         console.log("yes")
+//     }
+// }
+
+// printB(R)
