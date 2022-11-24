@@ -7,50 +7,59 @@
 
 // }
 
+let questionEl = document.getElementById("q")
+// let allChoices = document.getElementById("choices")
+let textEl = documnet.getElementById("status-text")
 
+var A = document.getElementById("A")
+var B = document.getElementById("B")
+var C = document.getElementById("C")
 
 let allQuestions = [
-
     {
-
         question : "What is 6 x 6?",
         choiceA : "36",
         choiceB : "54",
         choiceC : "96",
         correct : "A"
-
     },{
-
         question : "What is 8 x 8?",
         choiceA : "68",
         choiceB : "72",
         choiceC : "96",
         correct : "B"
-
     },{
-
         question : "What is 12 x 12?",
         choiceA : "84",
         choiceB : "121",
         choiceC : "144",
         correct : "C"
-
     }
-
 ];
 
 let q = allQuestions[0].question
-
 let a = allQuestions[0].correct
 
-let choices = allQuestions[0].[choiceA, choiceB, choiceC]
+// let choices = allQuestions[0].[choiceA, choiceB, choiceC]
 
+// function checkAnswer() {
+//     if input = a {
+//         console.log("Correct")   
+//     } else {
+//         console.log("Incorrect")
+//     }
+// }
 
+questionEl.innerHTML = allQuestions[0].question
 
-function checkAnswer() {
-    if input = a {
-        console.log("Correct")   
-    } else {
-        console.log("Incorrect")
-    }
-}
+A.innerHTML = allQuestions[0].choiceA
+B.innerHTML = allQuestions[0].choiceB
+C.innerHTML = allQuestions[0].choiceC
+
+textEl.textContent = "HELLO"
+
+// function checkAnswer(A)
+//     if (A) = a {
+    //     textEl.innerHTML = "Correct"
+    // } else
+    //     textEl.innerHTML = "Incorrect"
