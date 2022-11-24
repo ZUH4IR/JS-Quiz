@@ -29,14 +29,21 @@ let allQuestions = [
     }
 ];
 // all [0] need to be changed into currentQues
-let q = allQuestions[0].question
-let ans = allQuestions[0].correct
 
-questionEl.innerHTML = allQuestions[0].question
+let currQues = 0
 
-A.textContent = allQuestions[0].choiceA
-B.textContent = allQuestions[0].choiceB
-C.textContent = allQuestions[0].choiceC
+// document.getElementById("next-ques").onclick = function nextQues(){
+//     currQues ++
+// }
+
+// let nextQuesBtn = document.getElementById("next-ques")
+
+let nextQuesBtn = document.querySelector('#next-ques')
+
+nextQuesBtn.addEventListener("click", () => {
+    // currQues ++
+    document.getElementById("current-question").innerHTML += 1
+})
 
 function checkAnswer(x){
     if (x == ans) {
@@ -44,6 +51,19 @@ function checkAnswer(x){
     } else
         textEl.innerHTML = "Incorrect"
 }
+
+let q = allQuestions[currQues].question
+let ans = allQuestions[currQues].correct
+
+questionEl.innerHTML = allQuestions[currQues].question
+
+A.textContent = allQuestions[currQues].choiceA
+B.textContent = allQuestions[currQues].choiceB
+C.textContent = allQuestions[currQues].choiceC
+
+console.log(currQues)
+
+// document.getElementById("current-question").textContent = currQues
 
 // textEl.textContent = "HELLO"
 
