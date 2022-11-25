@@ -28,7 +28,6 @@ h2 {
 
 }
 
-
 .correct {
     font-family: 'Arial';
     font-size: 90px;
@@ -57,5 +56,10 @@ button {
     text-align: center;
     color: #020e30;
     margin-top: 20px;
+}
+
+block { 
+    margin: auto;
+    width: 50%;
 }
 

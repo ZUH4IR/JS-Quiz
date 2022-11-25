@@ -1,11 +1,13 @@
-//let testQuestion = document.getElementById("test-question")
 let questionEl = document.getElementById("q")
-// let allChoices = document.getElementById("choices")
 let textEl = document.getElementById("status-text")
 
 var A = document.getElementById("A-btn")
 var B = document.getElementById("B-btn")
 var C = document.getElementById("C-btn")
+
+let currQues = 0
+let ans = allQuestions[currQues].correct
+let nextQuesBtn = document.querySelector('#next-ques')
 
 let allQuestions = [
     {
@@ -28,42 +30,45 @@ let allQuestions = [
         correct : "C"
     }
 ];
-// all [0] need to be changed into currentQues
-
-let currQues = 0
-let ans = allQuestions[currQues].correct
 
 function initialize(){
-    let q = allQuestions[currQues].question
     ans = allQuestions[currQues].correct
-
     questionEl.innerHTML = allQuestions[currQues].question
-
     A.textContent = allQuestions[currQues].choiceA
     B.textContent = allQuestions[currQues].choiceB
     C.textContent = allQuestions[currQues].choiceC
     document.getElementById("current-question").innerHTML = `Current Question: ${currQues+1}/${allQuestions.length}`
+    nextQuesBtn = document.querySelector('#next-ques')
 }
 
 initialize()
 
-// document.getElementById("next-ques").onclick = function nextQues(){
-//     currQues ++
-// }
+function displayEnd(){
+    nextQuesBtn.style.display = "block";
+    textEl.style.display = "block"
+}
 
-// let nextQuesBtn = document.getElementById("next-ques")
+function hideEnd(){
+    nextQuesBtn.style.display = "none";
+    textEl.style.display = "none"
+}
 
 function checkAnswer(x){
+    displayEnd()
     if (x == ans){
         textEl.innerHTML = "Correct"
     } else
         textEl.innerHTML = "Incorrect"
 }
 
-let nextQuesBtn = document.querySelector('#next-ques')
-
 nextQuesBtn.addEventListener("click", () => {
-    currQues ++
+    hideEnd()
+    if(currQues >= allQuestions.length - 1) {
+        currQues = 0
+        q = allQuestions[currQues].question
+    } else {
+            currQues ++
+        }
     initialize()
 })
 
@@ -72,6 +77,11 @@ document.querySelector('#reset-quiz').addEventListener("click", () => {
     initialize()
 })
 
+// document.getElementById("next-ques").onclick = function nextQues(){
+//     currQues ++
+// }
+
+// let nextQuesBtn = document.getElementById("next-ques")
 
 // document.getElementById("current-question").textContent = currQues
 
