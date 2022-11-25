@@ -1,14 +1,3 @@
-let questionEl = document.getElementById("q")
-let textEl = document.getElementById("status-text")
-
-var A = document.getElementById("A-btn")
-var B = document.getElementById("B-btn")
-var C = document.getElementById("C-btn")
-
-let currQues = 0
-let ans = allQuestions[currQues].correct
-let nextQuesBtn = document.querySelector('#next-ques')
-
 let allQuestions = [
     {
         question : "What is 6 x 6?",
@@ -30,6 +19,18 @@ let allQuestions = [
         correct : "C"
     }
 ];
+
+let questionEl = document.getElementById("q")
+let textEl = document.getElementById("status-text")
+
+var A = document.getElementById("A-btn")
+var B = document.getElementById("B-btn")
+var C = document.getElementById("C-btn")
+
+let currQues = 0
+let ans = allQuestions[currQues].correct
+let nextQuesBtn = document.querySelector('#next-ques')
+document.getElementsByClassName('choice').disabled = false
 
 function initialize(){
     ans = allQuestions[currQues].correct
@@ -54,11 +55,13 @@ function hideEnd(){
 }
 
 function checkAnswer(x){
-    displayEnd()
     if (x == ans){
         textEl.innerHTML = "Correct"
     } else
         textEl.innerHTML = "Incorrect"
+    displayEnd()
+    console.log(document.getElementsByClassName('choice'))
+    document.getElementsByClassName('choice').disabled = true
 }
 
 nextQuesBtn.addEventListener("click", () => {
