@@ -32,26 +32,6 @@ let allQuestions = [
 
 let currQues = 0
 
-// document.getElementById("next-ques").onclick = function nextQues(){
-//     currQues ++
-// }
-
-// let nextQuesBtn = document.getElementById("next-ques")
-
-let nextQuesBtn = document.querySelector('#next-ques')
-
-nextQuesBtn.addEventListener("click", () => {
-    // currQues ++
-    document.getElementById("current-question").innerHTML += 1
-})
-
-function checkAnswer(x){
-    if (x == ans) {
-        textEl.innerHTML = "Correct"
-    } else
-        textEl.innerHTML = "Incorrect"
-}
-
 let q = allQuestions[currQues].question
 let ans = allQuestions[currQues].correct
 
@@ -61,7 +41,35 @@ A.textContent = allQuestions[currQues].choiceA
 B.textContent = allQuestions[currQues].choiceB
 C.textContent = allQuestions[currQues].choiceC
 
-console.log(currQues)
+
+// document.getElementById("next-ques").onclick = function nextQues(){
+//     currQues ++
+// }
+
+// let nextQuesBtn = document.getElementById("next-ques")
+
+let nextQuesBtn = document.querySelector('#next-ques')
+
+document.getElementById("current-question").innerHTML = `Current Question: ${currQues}`
+
+nextQuesBtn.addEventListener("click", () => {
+    currQues ++
+    let q = allQuestions[currQues].question
+    let ans = allQuestions[currQues].correct
+
+    questionEl.innerHTML = allQuestions[currQues].question
+
+    A.textContent = allQuestions[currQues].choiceA
+    B.textContent = allQuestions[currQues].choiceB
+    C.textContent = allQuestions[currQues].choiceC
+})
+
+function checkAnswer(x){
+    if (x == ans) {
+        textEl.innerHTML = "Correct"
+    } else
+        textEl.innerHTML = "Incorrect"
+}
 
 // document.getElementById("current-question").textContent = currQues
 
