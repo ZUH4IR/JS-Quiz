@@ -40,7 +40,7 @@ questionEl.innerHTML = allQuestions[currQues].question
 A.textContent = allQuestions[currQues].choiceA
 B.textContent = allQuestions[currQues].choiceB
 C.textContent = allQuestions[currQues].choiceC
-
+document.getElementById("current-question").innerHTML = `Current Question: ${currQues}/${allQuestions.length}`
 
 // document.getElementById("next-ques").onclick = function nextQues(){
 //     currQues ++
@@ -49,8 +49,6 @@ C.textContent = allQuestions[currQues].choiceC
 // let nextQuesBtn = document.getElementById("next-ques")
 
 let nextQuesBtn = document.querySelector('#next-ques')
-
-document.getElementById("current-question").innerHTML = `Current Question: ${currQues}`
 
 nextQuesBtn.addEventListener("click", () => {
     currQues ++
@@ -62,6 +60,7 @@ nextQuesBtn.addEventListener("click", () => {
     A.textContent = allQuestions[currQues].choiceA
     B.textContent = allQuestions[currQues].choiceB
     C.textContent = allQuestions[currQues].choiceC
+    document.getElementById("current-question").innerHTML = `Current Question: ${currQues}/${allQuestions.length}`
 })
 
 function checkAnswer(x){
