@@ -37,7 +37,7 @@ h2 {
 p {
     font-family: 'Inter var';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 36px;
     color: #000000;
@@ -52,7 +52,7 @@ p {
 .incorrect {
     font-family: 'Inter var';
     font-size: 24px;
-    color: #4a020c;
+    color: #6c0311;
 }
 
 button {

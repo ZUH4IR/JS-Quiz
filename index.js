@@ -1,60 +1,52 @@
-// JS
-
 let allQuestions = [
     {
         question : "What is 6 x 6?",
-        choiceA : "36",
-        choiceB : "54",
-        choiceC : "96",
+        A : "36",
+        B : "54",
+        C : "96",
         correct : "A"
     },{
         question : "What is 8 x 8?",
-        choiceA : "68",
-        choiceB : "64",
-        choiceC : "96",
+        A : "68",
+        B : "64",
+        C : "96",
         correct : "B"
     },{
         question : "What is 12 x 12?",
-        choiceA : "84",
-        choiceB : "121",
-        choiceC : "144",
+        A : "84",
+        B : "121",
+        C : "144",
         correct : "C"
     }
 ];
 
-let questionEl = document.getElementById("q")
-let textEl = document.getElementById("status-text")
-
-var A = document.getElementById("A-btn")
-var B = document.getElementById("B-btn")
-var C = document.getElementById("C-btn")
-
 let currQues = 0
-let ans = allQuestions[currQues].correct
+let textEl = document.getElementById("status-text")
 let nextQuesBtn = document.querySelector('#next-ques')
+let ans = allQuestions[currQues].correct
 
-function initialize(){
+function initialize(){ // set all values 
     ans = allQuestions[currQues].correct
-    questionEl.innerHTML = allQuestions[currQues].question
-    A.textContent = allQuestions[currQues].choiceA
-    B.textContent = allQuestions[currQues].choiceB
-    C.textContent = allQuestions[currQues].choiceC
+    document.getElementById("q").innerHTML = allQuestions[currQues].question
+    document.getElementById("A-btn").textContent = allQuestions[currQues].A
+    document.getElementById("B-btn").textContent = allQuestions[currQues].B
+    document.getElementById("C-btn").textContent = allQuestions[currQues].C
     document.getElementById("current-question").innerHTML = `Current Question: ${currQues+1}/${allQuestions.length}`
 }
 
-initialize()
+initialize() // Question 1
 
-function displayEnd(){
+function displayEnd(){ // Reveal Next Button and Status Function
     nextQuesBtn.style.display = "inline";
     textEl.style.display = "block"
 }
 
-function hideEnd(){
+function hideEnd(){  // Hide Next Button and Status Function
     nextQuesBtn.style.display = "none";
     textEl.style.display = "none"
 }
 
-function checkAnswer(x){
+function checkAnswer(x){ // Check Answer Function
     if (x == ans){
         textEl.innerHTML = "Correct"
         textEl.className = "correct"
@@ -63,53 +55,21 @@ function checkAnswer(x){
         textEl.className = "incorrect"
     displayEnd()
     console.log(document.getElementsByClassName('choice'))
-    document.getElementsByClassName('choice').disabled = true
+    document.getElementsByClassName('choice').disabled = true // fix this
 }
 
-nextQuesBtn.addEventListener("click", () => {
+nextQuesBtn.addEventListener("click", () => { // next question button
     hideEnd()
     if(currQues >= allQuestions.length - 1) {
         currQues = 0
         q = allQuestions[currQues].question
     } else {
-            currQues ++
-        }
+        currQues ++
+    }
     initialize()
 })
 
-document.querySelector('#reset-quiz').addEventListener("click", () => {
+document.querySelector('#reset-quiz').addEventListener("click", () => { // reset question button
     currQues = 0
     initialize()
 })
-
-// document.getElementById("next-ques").onclick = function nextQues(){
-//     currQues ++
-// }
-
-// let nextQuesBtn = document.getElementById("next-ques")
-
-// document.getElementById("current-question").textContent = currQues
-
-// textEl.textContent = "HELLO"
-
-// console.log(B) = <button id="B" onclick="checkAnswer('B')">54</button>
-
-// let choices = allQuestions[0].[choiceA, choiceB, choiceC]
-
-// function checkAnswer() {
-//     if input = a {
-//         console.log("Correct")   
-//     } else {
-//         console.log("Incorrect")
-//     }
-// }
-
-// let R = 22
-
-// function printB(x){
-//     if ((x) = "22") {
-//         console.log("yes")
-//     }
-// }
-
-// printB(R)
