@@ -45,7 +45,7 @@ initialize()
 
 function displayEnd(){
     nextQuesBtn.style.display = "inline";
-    textEl.style.display = "inline"
+    textEl.style.display = "block"
 }
 
 function hideEnd(){
