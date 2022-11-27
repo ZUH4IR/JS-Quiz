@@ -28,15 +28,25 @@ h2 {
 
 }
 
+p {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 36px;
+    color: #000000;
+
+}
+
 .correct {
     font-family: 'Arial';
-    font-size: 90px;
-    color: #024a24;
+    font-size: 24px;
+    color: #115631;
 }
 
 .incorrect {
     font-family: 'Arial';
-    font-size: 90px;
+    font-size: 24px;
     color: #4a020c;
 }
 
@@ -56,6 +66,10 @@ button {
     text-align: center;
     color: #020e30;
     margin-top: 20px;
+}
+
+.choice {
+    font-size: 24px;
 }
 
 block { 

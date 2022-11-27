@@ -8,7 +8,7 @@ let allQuestions = [
     },{
         question : "What is 8 x 8?",
         choiceA : "68",
-        choiceB : "72",
+        choiceB : "64",
         choiceC : "96",
         correct : "B"
     },{
@@ -30,7 +30,6 @@ var C = document.getElementById("C-btn")
 let currQues = 0
 let ans = allQuestions[currQues].correct
 let nextQuesBtn = document.querySelector('#next-ques')
-document.getElementsByClassName('choice').disabled = false
 
 function initialize(){
     ans = allQuestions[currQues].correct
@@ -45,8 +44,8 @@ function initialize(){
 initialize()
 
 function displayEnd(){
-    nextQuesBtn.style.display = "block";
-    textEl.style.display = "block"
+    nextQuesBtn.style.display = "inline";
+    textEl.style.display = "inline"
 }
 
 function hideEnd(){
@@ -57,8 +56,10 @@ function hideEnd(){
 function checkAnswer(x){
     if (x == ans){
         textEl.innerHTML = "Correct"
+        textEl.className = "correct"
     } else
         textEl.innerHTML = "Incorrect"
+        textEl.className = "incorrect"
     displayEnd()
     console.log(document.getElementsByClassName('choice'))
     document.getElementsByClassName('choice').disabled = true
