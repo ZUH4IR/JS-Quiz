@@ -82,3 +82,11 @@ block {
     width: 50%;
 }
 
+
+.hover{
+}
+
+.hover:hover {
+    background-color: rgb(29, 29, 29);
+    color: #FFFFFF;
+}

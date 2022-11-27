@@ -1,3 +1,5 @@
+// JS
+
 let allQuestions = [
     {
         question : "What is 6 x 6?",
@@ -38,7 +40,6 @@ function initialize(){
     B.textContent = allQuestions[currQues].choiceB
     C.textContent = allQuestions[currQues].choiceC
     document.getElementById("current-question").innerHTML = `Current Question: ${currQues+1}/${allQuestions.length}`
-    nextQuesBtn = document.querySelector('#next-ques')
 }
 
 initialize()
