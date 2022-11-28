@@ -83,11 +83,11 @@ block {
 }
 
 
-.hover{
+.button{
 }
 
-.hover:hover {
-    background-color: rgb(182, 182, 182);
+.button:hover {
+    background-color: rgb(192, 214, 255);
 }
 
 /* 
