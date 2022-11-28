@@ -24,6 +24,12 @@ let currQues = 0
 let textEl = document.getElementById("status-text")
 let nextQuesBtn = document.querySelector('#next-ques')
 let ans = allQuestions[currQues].correct
+let choiceDisable = false
+
+const buttons = document.getElementsByClassName("choice");
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].disabled=choiceDisable;
+}
 
 function initialize(){ // Set Values to Question & Answer Choices
     ans = allQuestions[currQues].correct
@@ -32,10 +38,6 @@ function initialize(){ // Set Values to Question & Answer Choices
     document.getElementById("B-btn").textContent = allQuestions[currQues].B
     document.getElementById("C-btn").textContent = allQuestions[currQues].C
     document.getElementById("current-question").innerHTML = `Current Question: ${currQues+1}/${allQuestions.length}`
-    // document.getElementsByClassName('choice').disabled = false
-    document.getElementById("A-btn").disabled = false
-    document.getElementById("B-btn").disabled = false
-    document.getElementById("C-btn").disabled = false
 }
 
 initialize() // Question 1
@@ -43,11 +45,17 @@ initialize() // Question 1
 function displayEnd(){ // Reveal Next Button and Status Function
     nextQuesBtn.style.display = "inline";
     textEl.style.display = "block"
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled=true;
+    }
 }
 
 function hideEnd(){  // Hide Next Button and Status Function
     nextQuesBtn.style.display = "none";
     textEl.style.display = "none"
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled=false;
+    }
 }
 
 function checkAnswer(x){ // Check Answer Function
@@ -59,11 +67,6 @@ function checkAnswer(x){ // Check Answer Function
         textEl.className = "incorrect"
     }
     displayEnd()
-    console.log(document.getElementsByClassName('choice')) // testing...
-    // document.getElementsByClassName('choice').disabled = true // fix this
-    document.getElementById("A-btn").disabled = true
-    document.getElementById("B-btn").disabled = true
-    document.getElementById("C-btn").disabled = true
 }
 
 nextQuesBtn.addEventListener("click", () => { // next question button
