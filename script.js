@@ -25,7 +25,7 @@ let textEl = document.getElementById("status-text")
 let nextQuesBtn = document.querySelector('#next-ques')
 let ans = allQuestions[currQues].correct
 
-function initialize(){ // set all values 
+function initialize(){ // set all values to QnA
     ans = allQuestions[currQues].correct
     document.getElementById("q").innerHTML = allQuestions[currQues].question
     document.getElementById("A-btn").textContent = allQuestions[currQues].A
@@ -50,9 +50,10 @@ function checkAnswer(x){ // Check Answer Function
     if (x == ans){
         textEl.innerHTML = "Correct"
         textEl.className = "correct"
-    } else
+    } else {
         textEl.innerHTML = "Incorrect"
         textEl.className = "incorrect"
+    }
     displayEnd()
     console.log(document.getElementsByClassName('choice'))
     document.getElementsByClassName('choice').disabled = true // fix this

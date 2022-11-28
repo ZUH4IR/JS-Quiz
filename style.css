@@ -87,6 +87,14 @@ block {
 }
 
 .hover:hover {
-    background-color: rgb(29, 29, 29);
-    color: #FFFFFF;
+    background-color: rgb(182, 182, 182);
 }
+
+/* 
+To Do: 
+- Pressed class -> Button is pressed
+- Move Status text down
+- Transitions all
+- Center Alignment
+- Added Styling: Lines and placement of currQues
+- Arrow on Next Question

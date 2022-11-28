@@ -4,24 +4,24 @@
     
 <html>
     <head>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://rsms.me/">
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         <h1>Math Quiz</h1>
+        <p id= "status-text"></p>
     </head>
     <body>
         <div class="container">
             <p id= "current-question"></p>
             <h2 class="question" id="q" class="none">Question</h2>
-            <p id= "status-text"></p>
-            <button id= "A-btn" onclick="checkAnswer('A')" class="hover choice"></button>
-            <button id= "B-btn" onclick="checkAnswer('B')" class="hover choice"></button>
-            <button id= "C-btn" onclick="checkAnswer('C')" class="hover choice"></button>
+            <button id= "A-btn" onclick="checkAnswer('A')" class="button choice"></button>
+            <button id= "B-btn" onclick="checkAnswer('B')" class="button choice"></button>
+            <button id= "C-btn" onclick="checkAnswer('C')" class="button choice"></button>
             <br>
-            <button id= 'next-ques' class="hover" style="display: none">Next Question</button>
+            <button id= 'next-ques' class="button" style="display: none">Next Question</button>
             <br>
-            <button id= 'reset-quiz' class="hover">Reset</button>
+            <button id= 'reset-quiz' class="button">Reset</button>
         </div>
-        <script src="index.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
