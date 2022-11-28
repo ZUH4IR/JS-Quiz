@@ -27,9 +27,6 @@ let ans = allQuestions[currQues].correct
 let choiceDisable = false
 
 const buttons = document.getElementsByClassName("choice");
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].disabled=choiceDisable;
-}
 
 function initialize(){ // Set Values to Question & Answer Choices
     ans = allQuestions[currQues].correct
@@ -38,6 +35,9 @@ function initialize(){ // Set Values to Question & Answer Choices
     document.getElementById("B-btn").textContent = allQuestions[currQues].B
     document.getElementById("C-btn").textContent = allQuestions[currQues].C
     document.getElementById("current-question").innerHTML = `Current Question: ${currQues+1}/${allQuestions.length}`
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled=false;
+    }
 }
 
 initialize() // Question 1
@@ -53,9 +53,6 @@ function displayEnd(){ // Reveal Next Button and Status Function
 function hideEnd(){  // Hide Next Button and Status Function
     nextQuesBtn.style.display = "none";
     textEl.style.display = "none"
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].disabled=false;
-    }
 }
 
 function checkAnswer(x){ // Check Answer Function
